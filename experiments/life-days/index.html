@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сколько дней осталось жить</title>
+    <link rel="stylesheet" href="./life-days.css" />
+  </head>
+  <body>
+    <main class="life-lab">
+      <a class="back-link" href="../../">← Назад в каталог</a>
+      <h1>Сколько дней осталось жить</h1>
+      <p class="disclaimer">
+        Это не медицинский прогноз. Эксперимент создан для размышления о времени и привычках, а не для точного
+        предсказания.
+      </p>
+
+      <form id="life-form" class="panel">
+        <label>
+          Дата рождения
+          <input type="date" name="birthDate" required />
+        </label>
+        <label>
+          Ожидаемая продолжительность жизни (лет)
+          <input type="number" name="lifeExpectancy" min="1" max="130" value="80" />
+        </label>
+        <button type="submit">Рассчитать</button>
+      </form>
+
+      <section id="result" class="panel hidden" aria-live="polite">
+        <h2>Результат</h2>
+        <p id="summary"></p>
+        <div class="progress-wrap">
+          <div id="progress" class="progress"></div>
+        </div>
+        <small id="percent"></small>
+        <div id="grid" class="day-grid" aria-label="Визуализация прожитых и оставшихся дней"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./life-days.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+/* Базовые переменные для общего каркаса сайта. Если изменить, поменяется внешний вид каталога и служебных страниц. */
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111827;
+  --card: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #22d3ee;
+  --ok: #34d399;
+  --warn: #f59e0b;
+  --draft: #a78bfa;
+}
+
+/* Сбрасываем отступы, чтобы в разных браузерах не было неожиданных смещений. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 0%, #172554 0%, var(--bg) 45%, #020617 100%);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.nav-link {
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+.grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: color-mix(in srgb, var(--card) 88%, black);
+  border: 1px solid #374151;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+.status--готов {
+  background: color-mix(in srgb, var(--ok) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ok) 55%, transparent);
+}
+
+.status--в-процессе {
+  background: color-mix(in srgb, var(--warn) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warn) 55%, transparent);
+}
+
+.status--черновик {
+  background: color-mix(in srgb, var(--draft) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--draft) 55%, transparent);
+}
+
+.button-link {
+  margin-top: auto;
+  color: #03111e;
+  text-decoration: none;
+  background: var(--accent);
+  border-radius: 0.7rem;
+  padding: 0.55rem 0.8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.note {
+  margin-top: 1.2rem;
+  color: var(--muted);
+}

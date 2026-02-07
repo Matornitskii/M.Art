@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M.Art — лаборатория экспериментов</title>
+    <link rel="stylesheet" href="./assets/css/base.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <div>
+          <h1>M.Art: лаборатория экспериментов</h1>
+          <p class="subtitle">
+            Каталог формируется автоматически из файла <code>data/experiments.json</code>. Каждый эксперимент
+            живёт отдельно и может иметь свой стиль, сценарии и правила.
+          </p>
+        </div>
+        <a class="nav-link" href="./about/">О проекте</a>
+      </header>
+
+      <section>
+        <h2>Каталог экспериментов</h2>
+        <div id="catalog" class="grid" aria-live="polite"></div>
+        <p id="catalog-note" class="note"></p>
+      </section>
+    </main>
+
+    <script type="module" src="./assets/js/catalog.js"></script>
+  </body>
+</html>

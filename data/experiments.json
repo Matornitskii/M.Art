@@ -1,0 +1,26 @@
+[
+  {
+    "id": "life-days",
+    "title": "Сколько дней осталось жить",
+    "description": "Философский калькулятор и визуализация условного жизненного времени в днях.",
+    "status": "готов",
+    "url": "./experiments/life-days/",
+    "visible": true
+  },
+  {
+    "id": "tests-lab",
+    "title": "Лаборатория мини-тестов",
+    "description": "Набор небольших интерактивов: опрос, реакция и логический мини-тест с локальным сохранением.",
+    "status": "в процессе",
+    "url": "./experiments/tests-lab/",
+    "visible": true
+  },
+  {
+    "id": "hidden-prototype",
+    "title": "Скрытый прототип",
+    "description": "Пример отключённого эксперимента, который не должен отображаться в каталоге.",
+    "status": "черновик",
+    "url": "./experiments/hidden-prototype/",
+    "visible": false
+  }
+]
