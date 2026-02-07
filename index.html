@@ -6,21 +6,46 @@
     <title>M.Art — лаборатория экспериментов</title>
     <link rel="stylesheet" href="./assets/css/base.css" />
   </head>
-  <body>
+  <body class="page-home">
     <main class="container">
-      <header>
-        <div>
+      <!-- Верхняя панель в стиле Windows 11: чистая типографика, мягкие тени и без лишних декоративных кнопок. -->
+      <header class="hero-shell">
+        <!-- Главный блок с кратким описанием, чтобы новичку было понятно, откуда берутся карточки. -->
+        <div class="hero-main">
+          <p class="eyebrow">M.Art / EXPERIMENTS</p>
           <h1>M.Art: лаборатория экспериментов</h1>
           <p class="subtitle">
             Каталог формируется автоматически из файла <code>data/experiments.json</code>. Каждый эксперимент
             живёт отдельно и может иметь свой стиль, сценарии и правила.
           </p>
+          <div class="hero-actions">
+            <a class="nav-link" href="./about/">О проекте</a>
+          </div>
         </div>
-        <a class="nav-link" href="./about/">О проекте</a>
+
+        <!-- Небольшие показатели добавляют детализацию и помогают быстро оценить состояние каталога. -->
+        <div class="hero-stats" aria-label="Краткая сводка проекта">
+          <article class="stat-item">
+            <p class="stat-label">Архитектура</p>
+            <p class="stat-value">Изолированные модули</p>
+          </article>
+          <article class="stat-item">
+            <p class="stat-label">Источник данных</p>
+            <p class="stat-value">JSON-манифест</p>
+          </article>
+          <article class="stat-item">
+            <p class="stat-label">Тип проекта</p>
+            <p class="stat-value">Статический сайт</p>
+          </article>
+        </div>
       </header>
 
-      <section>
-        <h2>Каталог экспериментов</h2>
+      <!-- Основная зона с карточками экспериментов. ID оставляем прежними, чтобы JS продолжил работать без изменений. -->
+      <section class="catalog-shell">
+        <div class="catalog-head">
+          <h2>Каталог экспериментов</h2>
+          <p class="catalog-description">Выберите карточку, чтобы открыть конкретный эксперимент в отдельной странице.</p>
+        </div>
         <div id="catalog" class="grid" aria-live="polite"></div>
         <p id="catalog-note" class="note"></p>
       </section>
