@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лаборатория мини-тестов</title>
+    <link rel="stylesheet" href="./tests-lab.css" />
+  </head>
+  <body>
+    <main class="tests-page">
+      <a href="../../" class="back-link">← Назад в каталог</a>
+      <h1>Лаборатория мини-тестов</h1>
+      <p>Результаты сохраняются только в вашем браузере (localStorage).</p>
+
+      <section class="panel">
+        <h2>1) Мини-опрос</h2>
+        <form id="poll-form">
+          <label>
+            Что вам интереснее исследовать?
+            <select name="topic" required>
+              <option value="">Выберите вариант</option>
+              <option value="ui">UI-эксперименты</option>
+              <option value="games">Мини-игры</option>
+              <option value="data">Визуализации данных</option>
+            </select>
+          </label>
+          <button type="submit">Сохранить ответ</button>
+        </form>
+        <p id="poll-result"></p>
+      </section>
+
+      <section class="panel">
+        <h2>2) Тест реакции</h2>
+        <p>Нажмите «Старт», дождитесь сигнала «ЖМИ!» и как можно быстрее нажмите кнопку.</p>
+        <button id="reaction-button" class="reaction-btn">Старт</button>
+        <p id="reaction-result"></p>
+      </section>
+
+      <section class="panel">
+        <h2>3) Логический мини-тест</h2>
+        <p>Продолжите последовательность: 2, 4, 8, 16, ?</p>
+        <form id="logic-form">
+          <input type="number" name="answer" placeholder="Ваш ответ" required />
+          <button type="submit">Проверить</button>
+        </form>
+        <p id="logic-result"></p>
+      </section>
+    </main>
+
+    <script type="module" src="./tests-lab.js"></script>
+  </body>
+</html>

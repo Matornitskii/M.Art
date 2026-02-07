@@ -1,0 +1,67 @@
+/* Отдельная стилистика этого эксперимента: яркая и контрастная, без связи с другими страницами. */
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', system-ui, sans-serif;
+  background: #fff7ed;
+  color: #431407;
+}
+
+.tests-page {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+  padding: 1.2rem 0 2rem;
+}
+
+.back-link {
+  color: #9a3412;
+  text-decoration: none;
+}
+
+.panel {
+  margin-top: 1rem;
+  background: #ffedd5;
+  border: 1px solid #fdba74;
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fb923c;
+}
+
+button {
+  cursor: pointer;
+  background: #ea580c;
+  color: #fff;
+}
+
+.reaction-btn {
+  min-width: 180px;
+}
+
+.reaction-btn.waiting {
+  background: #facc15;
+  color: #422006;
+}
+
+.reaction-btn.go {
+  background: #16a34a;
+}
