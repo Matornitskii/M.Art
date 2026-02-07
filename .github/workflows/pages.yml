@@ -1,0 +1,48 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  # Запускаем публикацию при каждом пуше в основную ветку.
+  # Если убрать, сайт не будет автоматически обновляться после изменений.
+  push:
+    branches: ["main"]
+  # Позволяет запустить публикацию вручную из вкладки Actions.
+  workflow_dispatch:
+
+permissions:
+  # Нужны права на чтение кода репозитория для упаковки сайта.
+  contents: read
+  # Нужны права GitHub Pages для размещения артефакта как сайта.
+  pages: write
+  # Нужен токен OIDC для безопасной публикации.
+  id-token: write
+
+concurrency:
+  # Гарантируем, что одновременно работает только один деплой.
+  # Это защищает от гонок, когда несколько пушей идут подряд.
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      # GitHub автоматически подставит URL опубликованного сайта в интерфейсе.
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Публикуем весь репозиторий как статический сайт.
+          # Если изменить путь, часть файлов сайта может не попасть в деплой.
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
